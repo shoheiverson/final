@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 alert ("ok");
 =======
+=======
+>>>>>>> shoheiverson/master
 =======
 >>>>>>> shoheiverson/master
 
@@ -17,6 +20,7 @@ var mapOptions = {
 // [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
 var map = new google.maps.Map( canvas , mapOptions ) ;
 
+<<<<<<< HEAD
 function play(){
 <<<<<<< HEAD
   alert ("ok");
@@ -30,4 +34,11 @@ playButton.addEventListener("click", play);
 }
 var playButton = document.querySelector("#decide");
 playButton.addEventListener("click", play);
+>>>>>>> shoheiverson/master
+=======
+function decide(){
+ alert ("ok")
+}
+var decideButton = document.querySelector("[data-role=decide]");
+decideButton.addEventListener("click", decide);
 >>>>>>> shoheiverson/master
