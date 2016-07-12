@@ -48,7 +48,7 @@ var rand = Math.round(Math.random () * 5) + 1
 	if (rand == 4) ResLatitude = "35.553007"; ResLongitude = "139.645508"; msg = "クークリ";
   if (rand == 5) ResLatitude = "35.553908"; ResLongitude = "139.645867"; msg = "ベンダーベンダー";
 	alert(msg);
-=======
+  
 decideButton.addEventListener("click", decide);
 
 function go(){
@@ -95,5 +95,4 @@ directionsService.route(request, function(response, status) {
   }
 });
 
->>>>>>> shoheiverson/master
 }
