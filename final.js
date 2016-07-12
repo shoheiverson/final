@@ -11,8 +11,8 @@ var mapOptions = {
 // [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
 var map = new google.maps.Map( canvas , mapOptions ) ;
 
-function play(){
-  alert ("ok")
+function decide(){
+ alert ("ok")
 }
-var playButton = document.querySelector("#decide");
-playButton.addEventListener("click", play);
+var decideButton = document.querySelector("[data-role=decide]");
+decideButton.addEventListener("click", decide);
