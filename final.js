@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 alert ("ok");
 =======
+=======
+>>>>>>> shoheiverson/master
 
 var canvas = document.getElementById( 'map-canvas' ) ;
 
@@ -15,9 +18,16 @@ var mapOptions = {
 var map = new google.maps.Map( canvas , mapOptions ) ;
 
 function play(){
+<<<<<<< HEAD
   alert ("ok");
 }
 var playButton = document.querySelector("#decide");
 playButton.addEventListener("click", play);
 
+>>>>>>> shoheiverson/master
+=======
+  alert ("ok")
+}
+var playButton = document.querySelector("#decide");
+playButton.addEventListener("click", play);
 >>>>>>> shoheiverson/master
