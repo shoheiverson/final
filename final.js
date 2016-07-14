@@ -2,15 +2,38 @@
 
 var canvas = document.getElementById( 'map-canvas' ) ;
 
-var latlng = new google.maps.LatLng( 35.792621 , 139.806513 );
+var latlng = new google.maps.LatLng( 35.553287 , 139.646863);
 var mapOptions = {
-	zoom: 15 ,				
+	zoom: 17 ,				
 	center: latlng ,		
 };
 
 // [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
 //	ちょろ
-var map = new google.maps.Map( canvas , mapOptions ) ;
+//var map = new google.maps.Map( canvas , mapOptions ) ;
+var map;
+
+
+var rendererOptions={
+	draggable: true,
+	preserveViewport: true
+};
+var directionsDisplay = 
+  new google.maps.DirectionsRenderer(rendererOptions);
+var directionsService = 
+	new google.maps.DirectionsService();
+//directionsDisplay.setMap(map);
+
+function init(){
+	canvas = document.getElementById( 'map-canvas' ) ;
+	map = new google.maps.Map( canvas , mapOptions ) ;
+	console.log(canvas);
+	directionsDisplay.setMap(map);
+	google.maps.event.addListener(directionsDisplay,
+   'directions_changed', function(){
+ });
+}
+
 
 
 var x;
@@ -44,6 +67,26 @@ var rand = Math.round(Math.random () * 6) + 1
 var decideButton = document.querySelector("[data-role=decide]");
 decideButton.addEventListener("click",decide);
 
+function Route(){
+	console.log(y);
+	var request={
+		origin:y,
+		destination:x,	
+  		travelMode:google.maps.DirectionsTravelMode.WALKING,
+  		optimizeWaypoints: true
+	};
+	directionsService.route(request, function(response, status) {
+  	if (status==google.maps.DirectionsStatus.OK) {
+    	directionsDisplay.setDirections(response);
+		console.log(response);
+		
+  	}else{
+		  cosole.log("hoge");
+	  }
+});
+
+}
+
 
 
 
@@ -74,22 +117,29 @@ var GoButton = document.querySelector("[data-role=go]");
 GoButton.addEventListener("click", go);
 
 function getstart(){
-	console.log("start");
+	
 	y=document.getElementById("start").value;
 	
 	Route();
 }
 
 function Route(){
+	console.log(y);
 	var request={
-  origin:x,
-  destination:y,	
-  travelMode:google.maps.DirectionsTravelMode.WALKING	
-};
-directionsService.route(request, function(response, status) {
-  if (status==google.maps.DirectionsStatus.OK) {
-    directionsDisplay.setDirections(response);
-  }
+		origin:y,
+		destination:x,	
+  		travelMode:google.maps.DirectionsTravelMode.WALKING,
+  		optimizeWaypoints: true
+	};
+	directionsService.route(request, function(response, status) {
+  	if (status==google.maps.DirectionsStatus.OK) {
+    	directionsDisplay.setDirections(response);
+		console.log(response);
+		
+  	}else{
+		  cosole.log("hoge");
+	  }
 });
 
 }
+
