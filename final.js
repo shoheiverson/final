@@ -1,5 +1,4 @@
 
-alert ("ok");
 
 var canvas = document.getElementById( 'map-canvas' ) ;
 
@@ -12,44 +11,41 @@ var mapOptions = {
 // [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
 var map = new google.maps.Map( canvas , mapOptions ) ;
 
-<<<<<<< HEAD
-function play(){
 
-  alert ("ok");
-}
-var playButton = document.querySelector("#decide");
-playButton.addEventListener("click", play);
-
-  alert ("ok")
-var playButton = document.querySelector("#decide");
-playButton.addEventListener("click", play);
-=======
 var x;
 var y;
->>>>>>> shoheiverson/master
-
-function decide(){
- alert ("ok")
-}
-
-var decideButton = document.querySelector("[data-role=decide]");
-<<<<<<< HEAD
-decideButton.addEventListener("click", ShuffleRestaurants);
-
 var ResLatitude;
 var ResLongitude;
 
-function ShuffleRestaurants() {
-var rand = Math.round(Math.random () * 5) + 1
-	if (rand == 0) ResLatitude = "35.552884"; ResLongitude = "139.646072"; msg = "たつ吉"; 
-	if (rand == 1) ResLatitude = "35.554231"; ResLongitude = "139.646933"; msg = "とんかつ三田"; 
-	if (rand == 2) ResLatitude = "35.554058"; ResLongitude = "139.645572"; msg = "武蔵屋";
-	if (rand == 3) ResLatitude = "35.552986"; ResLongitude = "139.646392"; msg = "くりの木";
-	if (rand == 4) ResLatitude = "35.553007"; ResLongitude = "139.645508"; msg = "クークリ";
-  if (rand == 5) ResLatitude = "35.553908"; ResLongitude = "139.645867"; msg = "ベンダーベンダー";
+function decide(){
+var rand = Math.round(Math.random () * 6) + 1
+	if (rand == 1) {
+		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２２−４"; msg = "たつ吉"; 
+	}
+	else if (rand == 2) {
+		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２３−２"; msg = "とんかつ三田";
+	 }
+	else if (rand == 3) {
+		x="〒223-0061、神奈川県横浜市港北区日吉2丁目1-8"; msg = "武蔵屋";
+	}
+	else if (rand == 4){
+		x="神奈川県横浜市港北区日吉本町１丁目１９−２１、日吉スカイビル1F"; msg = "くりの木";
+	}
+	else if (rand == 5){
+		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目３、神奈川県横浜市港北区日吉本町1丁目3−17"; msg = "クークリ";
+	}
+  else{
+		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２−４"; msg = "ベンダーベンダー";
+	}
 	alert(msg);
-  
-decideButton.addEventListener("click", decide);
+}
+
+var decideButton = document.querySelector("[data-role=decide]");
+decideButton.addEventListener("click",decide);
+
+
+
+
 
 function go(){
 	var a= Math.floor(Math.random()*6)+1;
