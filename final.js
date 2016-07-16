@@ -6,13 +6,15 @@ var mapOptions = {
 	center: latlng ,		
 };
 
+var a;
+
 // [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
 //	ちょろ
 var map = new google.maps.Map( canvas , mapOptions ) ;
 var map;
 var rendererOptions={
 	draggable: true,
-	preserveViewport: true
+	preserveViewport: false
 };
 var directionsDisplay = 
   new google.maps.DirectionsRenderer(rendererOptions);
@@ -29,8 +31,10 @@ function init(){
    'directions_changed', function(){
  	});
 
-	var LocationButton = document.querySelector("[data-role=get_location]");
+	 var LocationButton = document.querySelector("[data-role=get_location]");
 	LocationButton.addEventListener("click", get_location);
+}
+
 
 var x;
 var y;
@@ -39,25 +43,25 @@ var ResLongitude;
 
 var msg;
 function decide(){
-var rand = Math.round(Math.random () * 6) + 1
-	if (rand == 1) {
-		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２２−４"; msg = "たつ吉"; 
+var rand = Math.round(Math.random () * 6) + 1;
+	if (rand == 1) {x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２２−４"; msg = "くりの木"; 
 	}
-	else if (rand == 2) {
-		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２３−２"; msg = "とんかつ三田";
-	 }
-	else if (rand == 3) {
-		x="〒223-0061、神奈川県横浜市港北区日吉2丁目1-8"; msg = "武蔵屋";
+	else if(rand ==2){
+		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２３−２";msg = "たつ吉";
 	}
-	else if (rand == 4){
-		x="神奈川県横浜市港北区日吉本町１丁目１９−２１、日吉スカイビル1F"; msg = "くりの木";
+	else if(rand ==3){
+		x="〒223-0061、神奈川県横浜市港北区日吉2丁目1-8"; msg = "とんかつ三田";
 	}
-	else if (rand == 5){
-		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目３、神奈川県横浜市港北区日吉本町1丁目3−17"; msg = "クークリ";
+	else if(rand ==4){
+		x="神奈川県横浜市港北区日吉本町１丁目２０−５";msg = "銀屋";
 	}
-  else{
-		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目２−４"; msg = "ベンダーベンダー";
+	else if(rand ==5){
+		x="神奈川県横浜市港北区日吉本町1丁目3−17"; msg = "GB’sカフェ";
 	}
+	else{
+		x="〒223-0062 神奈川県横浜市港北区日吉本町１丁目３−１９";msg = "武蔵屋";
+	}
+	a = rand;
 	alert(msg);
 }
 
@@ -200,15 +204,8 @@ function open(){
   infowindow.open(map);
 }
 
-<<<<<<< HEAD
- console.log("hoge");
 
 }
-=======
-}
-
-var LocationButton = document.querySelector("[data-role=get_location]");
-LocationButton.addEventListener("click", get_location);
 
  
 function get_location(){
@@ -268,9 +265,7 @@ document.querySelector('#start').value = results[0].formatted_address;
 } else {
 }
 });
-<<<<<<< HEAD
-}}
-=======
+
 }
->>>>>>> origin/master
->>>>>>> shoheiverson/master
+
+
