@@ -8,7 +8,7 @@ var mapOptions = {
 
 // [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
 //	ちょろ
-//var map = new google.maps.Map( canvas , mapOptions ) ;
+var map = new google.maps.Map( canvas , mapOptions ) ;
 var map;
 var rendererOptions={
 	draggable: true,
@@ -18,7 +18,7 @@ var directionsDisplay =
   new google.maps.DirectionsRenderer(rendererOptions);
 var directionsService = 
 	new google.maps.DirectionsService();
-//directionsDisplay.setMap(map);
+directionsDisplay.setMap(map);
 
 function init(){
 	canvas = document.getElementById( 'map-canvas' ) ;
@@ -201,10 +201,9 @@ function open(){
 }
 
 }
-/*
+
 var LocationButton = document.querySelector("[data-role=get_location]");
 LocationButton.addEventListener("click", get_location);
-*/
 
  
 function get_location(){
@@ -264,4 +263,4 @@ document.querySelector('#start').value = results[0].formatted_address;
 } else {
 }
 });
-}
+}}
