@@ -16,7 +16,7 @@ var map;
 
 var rendererOptions={
 	draggable: true,
-	preserveViewport: true
+	preserveViewport: false
 };
 var directionsDisplay = 
   new google.maps.DirectionsRenderer(rendererOptions);
