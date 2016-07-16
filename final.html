@@ -3,23 +3,25 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoMTPFZElK20q04nQRiWF6XEEMb8NaOJY"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoMTPFZElK20q04nQRiWF6XEEMb8NaOJY&
+sensor=FALSE"></script>
 </head>
 
-<body>
+<body onload="init()">
      <div class="map-embed">
 	<div id="map-canvas" style="width:500px; height:300px"></div>
 </div>
     
-<p><input type="button" value="ごはん決定"　button id="decide"></p>
+
 
 <p> <button data-role="decide">ごはんきめて</button></p>
 
-<<<<<<< HEAD
-<p><input type="text"><input type="button" value="出発地決定"　button id="start"></p>
-=======
+
 <p><input type="text" id="start"><input type="button" value="出発地決定" data-role="go"></p>
->>>>>>> shoheiverson/master
+
 <script src="final.js"></script>
+<p> <button data-role="get_location">現在位置情報を取得</button></p>
+</div>
+    <div id="area_name"></div>
 </body>
 </html>
