@@ -200,6 +200,11 @@ function open(){
   infowindow.open(map);
 }
 
+<<<<<<< HEAD
+ console.log("hoge");
+
+}
+=======
 }
 
 var LocationButton = document.querySelector("[data-role=get_location]");
@@ -263,4 +268,9 @@ document.querySelector('#start').value = results[0].formatted_address;
 } else {
 }
 });
+<<<<<<< HEAD
 }}
+=======
+}
+>>>>>>> origin/master
+>>>>>>> shoheiverson/master
